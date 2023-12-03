@@ -13,15 +13,19 @@
 
 Методология решения 
 Для хеширования пароля был использован код на Python
+
 ![image](https://github.com/Templroot/CTF/assets/67968762/5a260a5d-ea20-4b7b-887f-f0a96ecd66ab)
+
 Чтобы распароллить архив, использовали утилиту HashCat.
 С помощью данной команды можно проверить все доступные параметры:
 hashcat –h:
+
 ![image](https://github.com/Templroot/CTF/assets/67968762/ac422fd3-c186-40a5-9eb9-fc4597fbdb0c)
 
 Далее нужно убедиться, что входные хеши имеют совместимый с hashcat формат.
 
  ![image](https://github.com/Templroot/CTF/assets/67968762/659866eb-1011-417a-8783-7ae1b92b5d63)
+ 
 При помощи команды:
 hashcat -m 0 -a 0 hash.txt pass.txt
 Где:
@@ -30,17 +34,24 @@ hashcat -m 0 -a 0 hash.txt pass.txt
 •	hash.txt: текстовый файл, содержащий хэш в совместимом формате,
 •	pass.txt: файл словаря, содержащий пароли в виде простого текста.
 Получаем взломанный хэш:
+
 ![image](https://github.com/Templroot/CTF/assets/67968762/1b471dd2-de3e-49d3-8235-9ca8423b0681)
+
 Используем полученный пароль (LsBa$e64), чтобы разархивировать архив.
 Декодирование
 Разархивировав, команда получает доступ к картинке.
 При помощи библиотеки stegano была спрятана информация в картинку:
+
 ![image](https://github.com/Templroot/CTF/assets/67968762/c482f8a7-fda3-4648-9430-ec28e10d6f0d)
 
+
 Чтобы извлечь информацию из картинки был написан код на Python:
+
 ![image](https://github.com/Templroot/CTF/assets/67968762/fc827fc1-51fc-43ca-a09a-30f3b96125ce)
 
+
 Далее нужно рассшифровать сообщение при помощи кода:
+
 ![image](https://github.com/Templroot/CTF/assets/67968762/8bcee204-0852-40dd-bafc-cee4157e520f)
 
 Расшифровав, получаем флаг к таску «zssoib{Linux_Hash_LSB}».
