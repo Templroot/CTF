@@ -26,7 +26,9 @@
 
 С помощью данной команды можно проверить все доступные параметры:
 
-hashcat –h:
+```cli
+hashcat –h
+```
 
 ![image](https://github.com/Templroot/CTF/assets/67968762/ac422fd3-c186-40a5-9eb9-fc4597fbdb0c)
 
@@ -35,6 +37,7 @@ hashcat –h:
  ![image](https://github.com/Templroot/CTF/assets/67968762/659866eb-1011-417a-8783-7ae1b92b5d63)
  
 При помощи команды:
+
 ```cli
 hashcat -m 0 -a 0 hash.txt pass.txt
 ```
