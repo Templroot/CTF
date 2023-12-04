@@ -35,8 +35,9 @@ hashcat –h:
  ![image](https://github.com/Templroot/CTF/assets/67968762/659866eb-1011-417a-8783-7ae1b92b5d63)
  
 При помощи команды:
-
+```bash
 hashcat -m 0 -a 0 hash.txt pass.txt
+```
 
 Где:
 
